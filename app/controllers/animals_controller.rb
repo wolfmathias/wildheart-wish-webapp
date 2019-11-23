@@ -6,6 +6,12 @@ class AnimalsController < ApplicationController
     def new
     end
 
+    def create
+    end
+    
+    def show
+    end
+
     def edit
     end
 
@@ -13,9 +19,6 @@ class AnimalsController < ApplicationController
     end
 
     def destroy
-    end
-
-    def show
     end
 
 end
