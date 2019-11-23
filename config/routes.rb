@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-  resources :keepers
-  # resources :donations
-  # resources :donors
- 
+  
+  resources :keepers, except: [:index]
+  resources :donors, except: [:index]
 
-  resources :keepers, only [:show] do
-    resources :animals # /keepers/:id/animals/CRUD
+  resources :keepers, only: [:show] do
+    resources :animals 
   end
 
-  resources :donors, only [:show] do
-    resources :donations, only [:index, :show] # /donors/:id/donations and /donors/:id/donations/:donation_id
+  resources :donors, only: [:show] do
+    resources :donations, only: [:index, :show] 
   end
 
 
