@@ -3,5 +3,5 @@ class Animal < ApplicationRecord
     has_many :wishes
     has_many :toys, through: :wishes
     has_many :donations, through: :wishes
-    has_many :donors, through: donations
+    has_many :donors, through: :donations
 end
