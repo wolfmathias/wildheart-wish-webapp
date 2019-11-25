@@ -12,6 +12,7 @@
 
     <%= f.label :password %>
     <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
 
     <%= f.fields_for :animals do |ff| %>
         <% ff.hidden_field :keeper_id %>
