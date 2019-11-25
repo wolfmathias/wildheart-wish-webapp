@@ -1,6 +1,23 @@
 
 ## User Flow
 
+    - Zookeeper
+
+    Creates account from "For zookeepers" link on homepage (or logs in).
+
+    When logging in, is required to create at least one animal. Also chooses toys for that
+    animal at the time of creation.
+
+    Profile page displays:
+        - index of animals
+        - wishes that are currently active
+        - feed of actions (wishes that have been fulfilled, actions that need to be taken, etc.)
+        - link for editing account
+        - link for creating animals
+        - link for logging out (display in header?)
+        
+
+    
 
 ## Models and Associations:
 

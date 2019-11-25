@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :donors, only: [:show] do
     resources :donations, only: [:index, :show] 
+    resources :animals, only: [:index, :show]
   end
 
 
