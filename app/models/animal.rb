@@ -6,6 +6,7 @@ class Animal < ApplicationRecord
     has_many :donors, through: :donations
 
     # create a Wish for every toy added to this animals collection every time a toy is added to an animal's collection
+    # extra validation to ensure all toys in an animal's collection is associated with a wish
     def toy_ids=(toy_ids)
         toy_ids.each do |id|
             self.wishes.build(toy_id: id)
