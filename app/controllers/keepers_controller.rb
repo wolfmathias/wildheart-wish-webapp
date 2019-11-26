@@ -19,6 +19,7 @@ class KeepersController < ApplicationController
     end
 
     def update
+        Keeper.update(keeper_params)
     end
 
     def destroy

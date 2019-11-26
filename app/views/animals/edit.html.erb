@@ -1,1 +1,9 @@
 <h1>Edit Animal Profile</h1>
+
+<%= form_with model: @animal do |animal| %>
+
+    <%= render partial: 'form', locals: {animal: animal} %>
+
+    <%= animal.submit %>
+
+<% end %>

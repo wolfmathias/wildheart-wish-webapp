@@ -1,1 +1,8 @@
 <h1>Animal Profile Page</h1>
+
+<%= animal.name %>
+<%= animal.bio %>
+
+<% animal.wishes.each do |wish| %>
+    <%= wish.toy_id %>
+<% end %>
