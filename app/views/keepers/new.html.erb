@@ -1,17 +1,13 @@
 <h1>Create a new Keeper account</h1>
 
-<%= form_with model: @keeper do |f| %>
-    <%# render keeper form %>
-    <%= render 'form' %>
+<%= form_with model: @keeper do |keeper| %>
 
-    
-        <%# render animal form %>
-        <%= render partial: 'animals/form', locals: {animals: @keeper.animals.build} %>
+    <%= render partial: 'form', locals: {keeper: keeper} %>
 
-        <!-- <%= ff.fields_for :wishes do |fff| %>
-            <%= fff.collection_check_boxes :toy_id, Toy.all, :id, :id %>
-        <% end %> -->
-   
+    <%= keeper.fields_for :animals do |animal| %>  
+        <%= render partial: 'animals/form', locals: {animal: animal} %>
+        <%= animal.collection_check_boxes :toy_ids, Toy.all, :id, :id %>
+    <% end %>
 
-    <%= f.submit "Create Account" %>
+    <%= keeper.submit "Create Account" %>
 <% end %>

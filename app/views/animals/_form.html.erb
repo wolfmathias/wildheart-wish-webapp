@@ -1,5 +1,5 @@
 <%# partial for creating and editing animal %>
-<%= fields_for :animals do |animal| %>
+
 <%= animal.label :name %>
 <%= animal.text_field :name %>
 
@@ -8,5 +8,3 @@
 
 <%= animal.label :bio %>
 <%= animal.text_area :bio %>
-a 
-<% end %>
