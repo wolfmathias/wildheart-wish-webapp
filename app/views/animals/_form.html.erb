@@ -1,1 +1,12 @@
-<h1>Animal Form Partial</h1>
+<%# partial for creating and editing animal %>
+<%= fields_for :animals do |animal| %>
+<%= animal.label :name %>
+<%= animal.text_field :name %>
+
+<%= animal.label :species %>
+<%= animal.text_field :species %>
+
+<%= animal.label :bio %>
+<%= animal.text_area :bio %>
+a 
+<% end %>

@@ -1,39 +1,17 @@
-<h1>New Keeper Form Page</h1>
+<h1>Create a new Keeper account</h1>
 
 <%= form_with model: @keeper do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%# render keeper form %>
+    <%= render 'form' %>
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    
+        <%# render animal form %>
+        <%= render partial: 'animals/form', locals: {animals: @keeper.animals.build} %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.fields_for :animals do |ff| %>
-        <% ff.hidden_field :keeper_id %>
-        
-        <%= ff.label :name %>
-        <%= ff.text_field :name %>
-
-        <%= ff.label :species %>
-        <%= ff.text_field :species %>
-
-        <%= ff.label :bio %>
-        <%= ff.text_area :bio %>
-
-        <%= ff.fields_for :wishes do |t| %>
-
-            <%= t.collection_check_boxes :toy_id, Toy.all, :id, :id %>
-
-        <% end %> 
-
-    <% end %>
+        <!-- <%= ff.fields_for :wishes do |fff| %>
+            <%= fff.collection_check_boxes :toy_id, Toy.all, :id, :id %>
+        <% end %> -->
+   
 
     <%= f.submit "Create Account" %>
-
 <% end %>

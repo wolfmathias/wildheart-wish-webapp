@@ -7,7 +7,7 @@ class KeepersController < ApplicationController
     end
 
     def create
-        raise params.inspect
+        params.inspect
         @keeper = Keeper.create(keeper_params)
     end
 

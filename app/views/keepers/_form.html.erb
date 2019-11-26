@@ -1,17 +1,14 @@
-<!-- partial for creating and editing keeper -->
+<%# partial for creating and editing keeper %>
     
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
+<%= label_tag :first_name %>
+<%= text_field_tag :first_name %>
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
+<%= label_tag :last_name %>
+<%= text_field_tag :last_name %>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
+<%= label_tag :email %>
+<%= text_field_tag :email %>
 
-<%= f.label :password %>
-<%= f.password :password %>
-
-
-
-
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+<%= password_field_tag :password_confirmation %>
