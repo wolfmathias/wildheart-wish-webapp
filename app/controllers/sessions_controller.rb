@@ -8,11 +8,9 @@ class SessionsController < ApplicationController
     def create # login and set user session
         
         # add verification errors to view when redirecting
-        
-        user = User.find_by(email: login_params[:email]) # find user with params
-        if user && user.authenticate(login_params[:password]) # refactor this line to something pretty
-            set_user
-            redirect_to user_path(user)
+        @user = User.find_by(email: login_params[:email])
+        if set_user
+            redirect_to user_path(@user)
         else
             render 'new'
         end
@@ -23,7 +21,7 @@ class SessionsController < ApplicationController
     end
     
     def current_user
-        @user ||= User.find_by(id: session[:user_id])
+        @user ||= User.find_by(id: session[:user_id]) # why am I using ||= instead of just = 
     end
 
     def logged_in?
@@ -31,8 +29,10 @@ class SessionsController < ApplicationController
     end
 
     def set_user
-        # where to check for user type? Separate controllers for different user types?
-        @user = User.find_by(user_params)
+        if @user && @user.authenticate(login_params[:password])
+            session[:user_id] = @user.id
+            current_user
+        end
     end
 
     def login_params
