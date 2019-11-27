@@ -1,4 +1,4 @@
-class Keeper < ApplicationRecord
+class Keeper < ApplicationRecord # deprecated model?
     has_many :animals
     has_many :wishes, through: :animals
     has_many :toys, through: :wishes
