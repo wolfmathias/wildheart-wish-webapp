@@ -1,16 +1,16 @@
 class SessionsController < ApplicationController
     helper_method :current_user
+    helper_method :logged_in?
 
     def new
     end
 
     def create # login and set user session
-        # find user with params and set session[:user_id]
-        # send to show page if no errors
-        # redirect if errors
         
-        user = User.find_by(email: login_params[:email])
-        if user && user.authenticate(login_params[:password])
+        # add verification errors to view when redirecting
+        
+        user = User.find_by(email: login_params[:email]) # find user with params
+        if user && user.authenticate(login_params[:password]) # refactor this line to something pretty
             set_user
             redirect_to user_path(user)
         else
