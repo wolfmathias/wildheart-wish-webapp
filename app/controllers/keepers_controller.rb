@@ -1,29 +1,29 @@
 class KeepersController < ApplicationController
 
     def new
-        @keeper = Keeper.new
-        @keeper.animals.build
+        @user = User.new(role: :keeper)
+        @user.animals.build
     end
 
     def create
-        @keeper = Keeper.new(keeper_params)
-        if @keeper.save
-            redirect_to keeper_path(@keeper)
+        @user = User.new(keeper_params)
+        if @user.save
+            redirect_to keeper_path(@user)
         else
             render 'keepers/new'
         end
     end
 
     def show
-        @keeper = Keeper.find_by(params[:id])
+        @user = User.find_by(params[:id])
     end
 
     def edit
-        @keeper = Keeper.find_by(params[:id])
+        @user = User.find_by(params[:id])
     end
 
     def update
-        Keeper.update(keeper_params)
+        User.update(keeper_params)
     end
 
     def destroy
