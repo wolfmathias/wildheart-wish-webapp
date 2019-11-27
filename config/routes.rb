@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   
+  resources :keepers, except: [:index, :show]
+  
   resources :keepers, only: [:show] do
     resources :animals 
   end
   
-  resources :keepers, except: [:index, :show]
+  resources :donors, except: [:index, :show]
   
   resources :donors, only: [:show] do
     resources :donations, only: [:index, :show] 
     resources :animals, only: [:index, :show]
   end
 
-  resources :donors, except: [:index, :show]
-
-  
+  # need routes for users
 
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/sessions', to: 'sessions#create'
