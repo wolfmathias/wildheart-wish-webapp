@@ -1,5 +1,5 @@
 class Animal < ApplicationRecord
-    belongs_to :keeper
+    belongs_to :user
     has_many :wishes
     has_many :toys, through: :wishes
     has_many :donations, through: :wishes
