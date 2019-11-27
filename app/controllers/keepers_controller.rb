@@ -6,8 +6,12 @@ class KeepersController < ApplicationController
     end
 
     def create
-        @keeper = Keeper.create(keeper_params)
-        redirect_to keeper_path(@keeper)
+        @keeper = Keeper.new(keeper_params)
+        if @keeper.save
+            redirect_to keeper_path(@keeper)
+        else
+            render 'keepers/new'
+        end
     end
 
     def show
@@ -25,10 +29,6 @@ class KeepersController < ApplicationController
     def destroy
     end
 
-    private
-
-    def keeper_params
-        params.require(:keeper).permit(:first_name, :last_name, :email, :password, :password_confirmation, animals_attributes: [:name, :species, :bio, toy_ids: []])
-    end
+    
 
 end
