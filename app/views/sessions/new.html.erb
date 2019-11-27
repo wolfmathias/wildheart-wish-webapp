@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<!-- create a nice login template -->
+<!-- refactor form into partial -->
+<%= form_tag(sessions_path) do %>
+    <%= label_tag "Email: " %>
+    <%= text_field_tag :email %><br>
+    <%= label_tag "Password: " %>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Login" %>
+<% end %>
