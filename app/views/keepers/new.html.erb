@@ -3,13 +3,16 @@
 
 <%= form_with model: @keeper do |keeper| %>
 
-    <%= render partial: 'form', locals: {keeper: keeper} %>
+    <%= render partial: 'form', locals: {keeper: keeper} %><br>
 
+    <label>Create a profile for one of your animals and add some toys to their wishlist!</label><br>
+    
     <%= keeper.fields_for :animals do |animal| %>  
         <%= render partial: 'animals/form', locals: {animal: animal} %>
         <%= animal.collection_check_boxes :toy_ids, Toy.all, :id, :id %>
     <% end %>
-
+    <br>
+    
     <%= keeper.submit "Create Account" %>
 <% end %>
 </section>

@@ -1,14 +1,15 @@
 <%# partial for creating and editing keeper %>
     
 <%= keeper.label :first_name %>
-<%= keeper.text_field :first_name %>
+<%= keeper.text_field :first_name %><br>
 
 <%= keeper.label :last_name %>
-<%= keeper.text_field :last_name %>
+<%= keeper.text_field :last_name %><br>
 
 <%= keeper.label :email %>
-<%= keeper.text_field :email %>
+<%= keeper.text_field :email %><br>
 
 <%= keeper.label :password %>
-<%= keeper.password_field :password %>
-<%= keeper.password_field :password_confirmation %>
+<%= keeper.password_field :password %><br>
+<%= keeper.label "Retype Password" %>
+<%= keeper.password_field :password_confirmation %><br>
