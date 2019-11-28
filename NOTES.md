@@ -1,3 +1,19 @@
+## For future build
+
+    - User is base model. User has one Donor (model to track donor info), many donations through that donor, many wishes through donations, *many animals through wishes, many toys through wishes* (skip ** unless it seems necessary to have methods for those associations)
+
+    - Donor model is saved whenever a donation is made in order to preserve donor information regardless of account creation. Donor model belongs to user.
+
+    - User (has registered account) has one Keeper. This model is created if the user role is set as keeper. Belongs to user.
+
+    - Keeper has many animals, has many wishes through animals, *has many toys through wishes*
+
+    - Animal has many wishes, has many toys through wishes
+
+    - Admin belongs to user and is created if user role is set to admin. Can view index of everything, plus other methods for CRM stuff. (create after everything else is built)
+
+
+
 
 ## User Flow
 
