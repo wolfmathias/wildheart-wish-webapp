@@ -31,7 +31,11 @@ gem 'bcrypt', '~> 3.1.11'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # make sure yarn is installed. Install from: https://yarnpkg.com/lang/en/docs/install/
+gem 'omniauth'
 
+gem 'omniauth-facebook'
+
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

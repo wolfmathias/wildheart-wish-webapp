@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   # need routes for users
 
+  get '/auth/facebook/callback' => 'sessions#create'
+
   get '/login', to: 'sessions#new', as: 'new_session'
   post '/sessions', to: 'sessions#create'
   # post '/delete', to: 'sessions#destroy', as: '/'
