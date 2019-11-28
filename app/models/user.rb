@@ -6,10 +6,10 @@ class User < ApplicationRecord
     accepts_nested_attributes_for :animals
 
     # validations
-    validates :password, confirmation: true, message: "Passwords must match."
-    validates :password_confirmation, presence: true
-    validates :email, presence: true, message: "Please enter a valid email."
-    validates :email, uniqueness: true, message: "An account already exists with that email."
+    # validates :password, confirmation: true, message: "Passwords must match."
+    # validates :password_confirmation, presence: true
+    validates :email, presence: true # message: "Please enter a valid email."
+    validates :email, uniqueness: true # message: "An account already exists with that email."
     has_secure_password
     
     enum role: {donor: 0, keeper: 1, admin: 2} # set role by calling self.donor!, self.keeper!, self.admin
